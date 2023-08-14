@@ -69,3 +69,6 @@ window#waybar.solo {
 #custom-storage.critical {
     color:      rgba(238, 46, 36, 1);
 }
+#tray {
+    margin:     0px 10px 0px 10px;
+}
