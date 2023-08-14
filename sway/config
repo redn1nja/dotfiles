@@ -104,8 +104,9 @@ exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
     assign [class="Code"] workspace number 2
     assign [class="jetbrains-clion"] workspace number 2 
     assign [class="obsidian"] workspace number 3
+    assign [class="Pcmanfm"] workspace number 4 
     for_window [class="Spotify"] move to workspace number 9
-    assign [class="teams-for-linux"] workspace number 4
+    assign [class="teams-for-linux"] workspace number 5
     assign [class="hd_launcher.exe"] workspace number 6
     assign [app_id="blueman-manager"] workspace number 9
     assign [app_id="pavucontrol"] workspace number 9
