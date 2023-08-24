@@ -42,7 +42,7 @@
             "ethernet": [""],
             "disconnected": [""]
         },
-        "on-click": "termite -e nmtui",
+        "on-click": "/home/ostap/Programs/networkmanager-dmenu-2.3.1/networkmanager_dmenu",
     "tooltip": false
     },
     "pulseaudio": {
