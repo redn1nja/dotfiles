@@ -49,10 +49,10 @@
         "format": "{icon}",
         "format-alt": "{volume} {icon}",
         "format-alt-click": "click-right",
-        "format-muted": "",
+        "format-muted": "󰝟",
         "format-icons": {
             "phone": ["", "", ""],
-            "default": ["󰕿", "󰕿", "󰕾 "]
+            "default": ["󰕿", "󰖀 ", "󰕾 "]
         },
         "scroll-step": 10,
         "on-click": "pavucontrol",

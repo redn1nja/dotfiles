@@ -35,7 +35,8 @@ include /etc/sway/config-vars.d/*
 exec ~/.cargo/bin/workstyle
 
 exec wmname LG3D
-
+exec pulseaudio --check
+exec pulseaudio -D
 output * bg ~/Pictures/wall1.jpg fill
 output eDP-1 pos 0 1080
 output DP-2 pos 0 0
@@ -52,11 +53,13 @@ output DP-2 pos 0 0
     bindsym $mod+Return exec $term
 set $gnome-schema org.gnome.desktop.interface
 exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
     bindsym Alt+F4 kill
     bindsym Alt+Space exec ~/.config/rofi/launchers/type-1/launcher.sh
 #    bindsym Alt+Space exec wofi --show run
     floating_modifier $mod normal
     bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+n exec ~/Programs/networkmanager-dmenu-2.3.1/networkmanager_dmenu
     bindsym Alt+Tab focus right
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
