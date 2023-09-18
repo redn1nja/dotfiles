@@ -52,7 +52,7 @@ output DP-2 pos 0 0
     # Start a terminal
     bindsym $mod+Return exec $term
 set $gnome-schema org.gnome.desktop.interface
-exec_always gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
+exec_always gsettings set $gnome-schema gtk-theme 'WhiteSur-Dark'
 exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
     bindsym Alt+F4 kill
     bindsym Alt+Space exec ~/.config/rofi/launchers/type-1/launcher.sh
@@ -97,7 +97,7 @@ exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
 
     bindsym $mod+Shift+Tab workspace prev
     bindsym $mod+Tab workspace next
-
+    for_window [class="org-nlogo-app-App" window_type="notification"] floating enable
     for_window [class="com-azefsw-audioconnect-desktop-app-MainKt"] move to workspace number 8
     for_window [app_id=$term] floating enable, resize set 1000 600
     assign [class="firefox"] workspace number 1
