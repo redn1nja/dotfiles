@@ -7,3 +7,4 @@ cp ~/.config/waybar/ . -r
 cp ~/.config/workstyle/ . -r
 cp ~/.config/neofetch/ . -r
 cp ~/.config/kitty/ . -r
+cp ~/.config/dunst/ . -r

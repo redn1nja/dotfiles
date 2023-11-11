@@ -39,6 +39,7 @@ exec pulseaudio --check
 exec pulseaudio -D
 output * bg ~/Pictures/wall1.jpg fill
 output eDP-1 pos 0 1080
+output HDMI-A-1 pos 0 0 
 output DP-2 pos 0 0
 
     bindsym $mod+F5 exec brightnessctl set 5%-
@@ -94,12 +95,13 @@ exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
-
+    bindsym $mod+Shift+k move workspace to output up
+    bindsym $mod+Shift+j move workspace to output down
     bindsym $mod+Shift+Tab workspace prev
     bindsym $mod+Tab workspace next
     for_window [class="org-nlogo-app-App" window_type="notification"] floating enable
     for_window [class="com-azefsw-audioconnect-desktop-app-MainKt"] move to workspace number 8
-    for_window [app_id=$term] floating enable, resize set 1000 600
+#    for_window [app_id=$term] floating enable, resize set 1000 600
     assign [class="firefox"] workspace number 1
     assign [app_id="chromium-browser"] workspace number 1
     for_window [app_id="chromium-browser"] layout tabbed
