@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mount="/"
+mount="/home"
 warning=20
 critical=10
 

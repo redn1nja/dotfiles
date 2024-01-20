@@ -24,10 +24,8 @@
 "telegram" = ""
 "gimp" = ""
 "caja" = ""
-"private browsing" = ""
 "spotify" = ""
 "teams" = "󰊻 "
-"font" = ""
 "firefox" = ""
 "rstudio" = "R"
 "intellij" = ""
@@ -41,4 +39,4 @@
 
 [other]
 fallback_icon = "_"
-deduplicate_icons = false
+deduplicate_icons = true

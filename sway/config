@@ -26,79 +26,84 @@ hide_edge_borders both
 exec xss-lock ~/.config/sway/lock.sh
 
 exec blueman-applet
-
+exec nm-applet
+set $mybind bindsym --to-code
 set $mod Mod4
 set $term kitty
+set $gnome-schema org.gnome.desktop.interface
 
 include /etc/sway/config-vars.d/*
 
-exec ~/.cargo/bin/workstyle
-
+exec workstyle
 exec wmname LG3D
-exec pulseaudio --check
-exec pulseaudio -D
-output * bg ~/Pictures/wall1.jpg fill
-output eDP-1 pos 0 1080
-output HDMI-A-1 pos 0 0 
-output DP-2 pos 0 0
+exec_always swayosd-server
+exec_always kanshi
+exec_always gsettings set $gnome-schema gtk-theme "Windows-10-Dark-3.2.1-dark"
+exec_always gsettings set org.gnome.boxes override-theme false
+exec_always gsettings set $gnome-schema color-scheme 'prefer-dark'
 
-    bindsym $mod+F5 exec brightnessctl set 5%-
-    bindsym $mod+F6 exec brightnessctl set 5%+
-    bindsym $mod+F7 exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-    bindsym $mod+F8 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    bindsym $mod+F9 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    bindsym $mod+l exec sh ~/.config/sway/lock.sh
-    bindsym $mod+0x6c4 exec sh ~/.config/sway/lock.sh
-    bindsym Print exec grim -g "$(slurp)" - | wl-copy
+output * bg ~/Pictures/bg.jpg fill
+
+
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume 2
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume -2
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym --release Caps_Lock exec swayosd-client --caps-lock-led input19::capslock
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+# Brightness lower
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
+$mybind $mod+l exec sh ~/.config/sway/lock.sh
+$mybind Print exec grim - | wl-copy
+$mybind Shift+Print exec grim -g "$(slurp)" - | wl-copy
     # Start a terminal
-    bindsym $mod+Return exec $term
+$mybind $mod+Return exec $term
 set $gnome-schema org.gnome.desktop.interface
-exec_always gsettings set $gnome-schema gtk-theme 'WhiteSur-Dark'
-exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
-    bindsym Alt+F4 kill
-    bindsym Alt+Space exec ~/.config/rofi/launchers/type-1/launcher.sh
-#    bindsym Alt+Space exec wofi --show run
-    floating_modifier $mod normal
-    bindsym $mod+Shift+c reload
-    bindsym $mod+Shift+n exec ~/Programs/networkmanager-dmenu-2.3.1/networkmanager_dmenu
-    bindsym Alt+Tab focus right
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+$mybind Alt+F4 kill
+$mybind Alt+Space exec ~/.config/rofi/launchers/type-1/launcher.sh
+floating_modifier $mod normal
+$mybind $mod+Shift+c reload
+$mybind $mod+Shift+n exec networkmanager_dmenu 
+$mybind Alt+Tab focus right
+$mybind $mod+Left focus left
+$mybind $mod+Down focus down
+$mybind $mod+Up focus up
+$mybind $mod+Right focus right
+$mybind $mod+Shift+Left move left
+$mybind $mod+Shift+Down move down
+$mybind $mod+Shift+Up move up
+$mybind $mod+Shift+Right move right
 #
 # Workspaces:
 #
     # Switch to workspace
-    bindsym $mod+1 workspace number 1
-    bindsym $mod+2 workspace number 2
-    bindsym $mod+3 workspace number 3
-    bindsym $mod+4 workspace number 4
-    bindsym $mod+5 workspace number 5
-    bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    $mybind $mod+1 workspace number 1
+    $mybind $mod+2 workspace number 2
+    $mybind $mod+3 workspace number 3
+    $mybind $mod+4 workspace number 4
+    $mybind $mod+5 workspace number 5
+    $mybind $mod+6 workspace number 6
+    $mybind $mod+7 workspace number 7
+    $mybind $mod+8 workspace number 8
+    $mybind $mod+9 workspace number 9
+    $mybind $mod+0 workspace number 10
     # Move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
-    bindsym $mod+Shift+k move workspace to output up
-    bindsym $mod+Shift+j move workspace to output down
-    bindsym $mod+Shift+Tab workspace prev
-    bindsym $mod+Tab workspace next
+    $mybind $mod+Shift+1 move container to workspace number 1
+    $mybind $mod+Shift+2 move container to workspace number 2
+    $mybind $mod+Shift+3 move container to workspace number 3
+    $mybind $mod+Shift+4 move container to workspace number 4
+    $mybind $mod+Shift+5 move container to workspace number 5
+    $mybind $mod+Shift+6 move container to workspace number 6
+    $mybind $mod+Shift+7 move container to workspace number 7
+    $mybind $mod+Shift+8 move container to workspace number 8
+    $mybind $mod+Shift+9 move container to workspace number 9
+    $mybind $mod+Shift+0 move container to workspace number 10
+    $mybind $mod+Shift+k move workspace to output up
+    $mybind $mod+Shift+j move workspace to output down
+    $mybind $mod+Shift+Tab workspace prev
+    $mybind $mod+Tab workspace next
     for_window [class="org-nlogo-app-App" window_type="notification"] floating enable
     for_window [class="com-azefsw-audioconnect-desktop-app-MainKt"] move to workspace number 8
 #    for_window [app_id=$term] floating enable, resize set 1000 600
@@ -117,24 +122,24 @@ exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
     assign [app_id="pavucontrol"] workspace number 9
     
 
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    $mybind $mod+b splith
+    $mybind $mod+v splitv
 
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    $mybind $mod+s layout stacking
+    $mybind $mod+w layout tabbed
+    $mybind $mod+e layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    $mybind $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+q floating toggle
+    $mybind $mod+Shift+q floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+q focus mode_toggle
+    $mybind $mod+q focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    $mybind $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -142,24 +147,24 @@ exec_always gsettings set $gnome-schema icon-theme 'Windows-10-Icons'
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
+    $mybind $mod+Shift+minus move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
+    $mybind $mod+minus scratchpad show
 #
 # Resizing containers:
 #
 mode "resize" {
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    $mybind Left resize shrink width 10px
+    $mybind Down resize grow height 10px
+    $mybind Up resize shrink height 10px
+    $mybind Right resize grow width 10px
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    $mybind Return mode "default"
+    $mybind Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+$mybind $mod+r mode "resize"
 
 
 bar {

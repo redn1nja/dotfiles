@@ -2,10 +2,11 @@
     border:        none;
     border-radius: 0;
     font-family:   Sans;
-    font-size:     15px;
+    font-size:     17px;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
+    padding:	0px 2px 0px 0px;
 }
 
 window {
@@ -40,22 +41,38 @@ window#waybar.solo {
     color:      rgba(238, 46, 36, 1);
 }
 
-#battery, #cpu, #memory, #network, #pulseaudio,  #backlight, #custom-storage #language{
-    margin:     0px 6px 0px 10px;
-    min-width:  25px;
+#workspaces button:hover{
+    background: black;
+
+}
+
+#battery, #pulseaudio,  #backlight, #custom-storage #language{
+    font-family: "Font Awesome 6 Free";
+    margin:     0px 6px 0px 6px;
+    padding:	0px 5px 0px 8px;
+    min-width:  40px; 
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
+#pulseaudio{
+    margin: -2px;
+}
+#battery{
+    font-family: Sans;
 }
 
 #clock {
-    margin:     0px 16px 0px 10px;
-    min-width:  140px;
+    margin:     0px 6px 0px 6px;
+    padding:	0px 10px 0px 0px;
+    border-right: 1px solid white;
 }
 
 #battery.warning {
-   color:       rgba(255, 210, 4, 1);
+   background:       rgba(255, 210, 4, 1);
 }
 
 #battery.critical {
-    color:      rgba(238, 46, 36, 1);
+    background:      rgba(238, 46, 36, 1);
 }
 
 #battery.charging {
@@ -71,4 +88,7 @@ window#waybar.solo {
 }
 #tray {
     margin:     0px 10px 0px 10px;
+    padding:	0px 8px 0px 8px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }

@@ -1,16 +1,16 @@
 {
     "layer": "bottom",
     "position": "top",
-    "height": 30,
+    "height": 35,
 
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["tray", "custom/storage", "backlight", "pulseaudio", "network", "battery", "clock", "sway/language"],
+    "modules-right": ["tray", "custom/storage", "pulseaudio", "battery", "clock", "sway/language"],
     "sway/mode": {
         "format": " {}"
     },
     "sway/workspaces": {
-        "format": "{name}",
+        "format": "{icon}",
         "disable-scroll": true
     },
     "sway/window": {
@@ -25,7 +25,7 @@
         "format": "{capacity}% {icon}",
         "format-alt": "{time} {icon}",
         "format-icons": [" ", " ", " ", " ", " "],
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}%  ",
         "interval": 30,
         "states": {
             "warning": 25,
@@ -33,26 +33,12 @@
         },
         "tooltip": false
     },
-    "network": {
-        "format": "{icon}",
-        "format-alt": "{ipaddr}/{cidr} {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": {
-            "wifi": [""],
-            "ethernet": [""],
-            "disconnected": [""]
-        },
-        "on-click": "/home/ostap/Programs/networkmanager-dmenu-2.3.1/networkmanager_dmenu",
-    "tooltip": false
-    },
     "pulseaudio": {
         "format": "{icon}",
-        "format-alt": "{volume} {icon}",
         "format-alt-click": "click-right",
-        "format-muted": "󰝟",
+        "format-muted": "󰝟 ",
         "format-icons": {
-            "phone": ["", "", ""],
-            "default": ["󰕿", "󰖀 ", "󰕾 "]
+            "default": ["", "", ""],
         },
         "scroll-step": 10,
         "on-click": "pavucontrol",
@@ -65,14 +51,6 @@
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"
-    },
-    "backlight": {
-        "format": "{icon}",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
-        "format-icons": ["", ""],
-        "on-scroll-down": "light -A 1",
-        "on-scroll-up": "light -U 1"
     },
     "sway/language": {
         "format": "{}",
