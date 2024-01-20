@@ -6,7 +6,7 @@
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
-    padding:	0px 2px 0px 0px;
+    padding:	0px 3px 0px 2px;
 }
 
 window {
@@ -50,12 +50,13 @@ window#waybar.solo {
     font-family: "Font Awesome 6 Free";
     margin:     0px 6px 0px 6px;
     padding:	0px 5px 0px 8px;
-    min-width:  40px; 
+    min-width:  40px;
     border-left: 1px solid white;
     border-right: 1px solid white;
 }
 #pulseaudio{
     margin: -2px;
+    border-left: 1px solid white;
 }
 #battery{
     font-family: Sans;
