@@ -4,8 +4,8 @@
     "height": 35,
 
     "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
-    "modules-right": ["tray", "custom/storage", "pulseaudio", "battery", "clock", "sway/language"],
+    "modules-center": [ "clock"],
+    "modules-right": ["tray", "custom/storage", "pulseaudio", "battery",  "sway/language"],
     "sway/mode": {
         "format": " {}"
     },
@@ -18,8 +18,9 @@
         "tooltip": false
     },
     "clock": {
-        "format": "{:%a %d %b %H:%M}",
-        "tooltip": false
+        "format": "{:%a %d %b %H:%M:%S}",
+        "tooltip": false,
+	"interval": 1
     },
     "battery": {
         "format": "{capacity}% {icon}",
@@ -46,8 +47,6 @@
     },
     "custom/storage": {
         "format": "{}  ",
-        "format-alt": "{percentage}%  ",
-        "format-alt-click": "click-right",
         "return-type": "json",
         "interval": 60,
         "exec": "~/.config/waybar/modules/storage.sh"

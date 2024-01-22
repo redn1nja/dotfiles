@@ -62,11 +62,6 @@ window#waybar.solo {
     font-family: Sans;
 }
 
-#clock {
-    margin:     0px 6px 0px 6px;
-    padding:	0px 10px 0px 0px;
-    border-right: 1px solid white;
-}
 
 #battery.warning {
    background:       rgba(255, 210, 4, 1);
