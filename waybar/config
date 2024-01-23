@@ -18,9 +18,8 @@
         "tooltip": false
     },
     "clock": {
-        "format": "{:%a %d %b %H:%M:%S}",
+        "format": "{:%a %d %b %H:%M}",
         "tooltip": false,
-	"interval": 1
     },
     "battery": {
         "format": "{capacity}% {icon}",

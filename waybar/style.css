@@ -56,8 +56,11 @@ window#waybar.solo {
 }
 #pulseaudio{
     margin: -2px;
-    border-left: 1px solid white;
+    }
+#language{
+	font-family: monospace;
 }
+
 #battery{
     font-family: Sans;
 }
