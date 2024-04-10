@@ -20,7 +20,6 @@
 "relay" = "󰢹 "
 "code" = "󰨞"
 "github" = ""
-"rust" = ""
 "telegram" = ""
 "gimp" = ""
 "caja" = ""
@@ -36,7 +35,9 @@
 "gthumb" = " "
 "transmission" = " "
 "music" = " "
-
+"rust" = ""
+"discord" = ""
+"docker" = " "
 [other]
 fallback_icon = "_"
 deduplicate_icons = true

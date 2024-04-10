@@ -104,22 +104,22 @@ $mybind $mod+Shift+Right move right
     $mybind $mod+Shift+j move workspace to output down
     $mybind $mod+Shift+Tab workspace prev
     $mybind $mod+Tab workspace next
-    for_window [class="org-nlogo-app-App" window_type="notification"] floating enable
     for_window [class="com-azefsw-audioconnect-desktop-app-MainKt"] move to workspace number 8
-#    for_window [app_id=$term] floating enable, resize set 1000 600
-    assign [class="firefox"] workspace number 1
-    assign [app_id="chromium-browser"] workspace number 1
-    for_window [app_id="chromium-browser"] layout tabbed
+    assign [app_id="chromium"] workspace number 1
+    for_window [app_id="chromium"] layout tabbed
     assign [app_id="org.telegram.desktop"] workspace number 10
-    assign [class="Code"] workspace number 2
+    assign [class="Code"] workspace number 3
     assign [class="jetbrains-clion"] workspace number 2 
-    assign [class="obsidian"] workspace number 3
-    assign [class="Pcmanfm"] workspace number 4 
+    assign [class="Docker Desktop"] workspace number 4
+    assign [app_id="pcmanfm"] workspace number 4 
     for_window [class="Spotify"] move to workspace number 9
-    assign [class="teams-for-linux"] workspace number 5
+    assign [class="Microsoft Teams - Preview"] workspace number 5
+    assign [class="steam"] workspace number 6
+    assign [class="discord"] workspace number 6
     assign [class="hd_launcher.exe"] workspace number 6
     assign [app_id="blueman-manager"] workspace number 9
     assign [app_id="pavucontrol"] workspace number 9
+    assign [class="Postman"] workspace number 3
     
 
     $mybind $mod+b splith
